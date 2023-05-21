@@ -6,8 +6,8 @@ import { InputCreateProductDto, OutputCreateProductDto } from "./create.product.
 export default class CreateProductUseCase {
     private productRepository: ProductRepositoryInterface;
 
-    constructor(productRepository: ProductRepositoryInterface) {
-        this.productRepository = productRepository;
+    constructor(ProductRepository: ProductRepositoryInterface) {
+        this.productRepository = ProductRepository;
     }
 
     async execute(input: InputCreateProductDto): Promise<OutputCreateProductDto> {

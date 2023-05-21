@@ -6,8 +6,8 @@ import { InputCreateCustomerDto, OutputCreateCustomerDto } from "./create.custom
 export default class CreateCustomerUseCase {
     private customerRepository: CustomerRepositoryInterface;
 
-    constructor(customerRepository: CustomerRepositoryInterface) {
-        this.customerRepository = customerRepository;
+    constructor(CustomerRepository: CustomerRepositoryInterface) {
+        this.customerRepository = CustomerRepository;
     }
 
     async execute(input: InputCreateCustomerDto): Promise<OutputCreateCustomerDto> {
