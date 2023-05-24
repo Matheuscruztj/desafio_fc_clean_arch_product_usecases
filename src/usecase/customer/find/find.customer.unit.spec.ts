@@ -18,24 +18,6 @@ const MockRepository = () => {
 }
 
 describe("Test find customer use case", () => {
-    let sequelize: Sequelize;
-
-    beforeEach(async () => {
-        sequelize = new Sequelize({
-        dialect: "sqlite",
-        storage: ":memory:",
-        logging: false,
-        sync: { force: true },
-        });
-
-        await sequelize.addModels([CustomerModel]);
-        await sequelize.sync();
-    });
-
-    afterEach(async () => {
-        await sequelize.close();
-    });
-
     it("should find a customer", async () => {
         const customerRepository = MockRepository();
         const usecase = new FindCustomerUseCase(customerRepository)
